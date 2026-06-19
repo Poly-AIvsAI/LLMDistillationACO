@@ -1,0 +1,34 @@
+name: distillationEnv
+
+channels:
+  - nvidia
+  - anaconda
+  - defaults
+  - conda-forge
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - bert_score==0.3.13
+      - datasets==3.0.2
+      - docutils==0.23
+      - evaluate==0.4.3
+      - gym==0.26.2
+      - matplotlib==3.11.0
+      - numpy==2.4.6
+      - optuna==4.2.1
+      - packaging==26.2
+      - paramiko==3.5.0
+      - prettytable==3.17.0
+      - pytest==8.3.3
+      - PyYAML==6.0.3
+      - setuptools==75.1.0
+      - stable-baselines3==2.5.0
+      - torch==2.5.0+cu121
+      - transformers==4.46.2
+      - wandb==0.27.2
+      - -e ./CybORGModified
