@@ -38,7 +38,7 @@ from customWrapper import CustomBlueWrapper
 
 
 #wandbLogDict={}
-groupName="LLMStandardIntegration_AuxLossAndActionMask"
+# groupName="ChangeToWanDBGroupName"
 
 def getLRScheduler(optimizer,initialLR,minLR,decayRate):
     lrLambda = lambda epoch: max(decayRate**epoch, minLR/initialLR)
@@ -666,10 +666,9 @@ if __name__=="__main__":
                      policyLR=lr,valueLR=criticLR,policyClip=policyClip, criticGradClip=criticGradClip, entropyCoef=entropyCoef)
     rewards=[]
 
-    for y in range(0,1):
-        groupName=f"changeToWandDB Group"
-        for i in range(0,1):
-            #wandb.init(project="ThesisFigures",group=groupName,name=f"run{i}",config={"Algorithm": groupName}, mode="offline", id=f"{groupName}_Run{i}_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M')}")
-            startTime=time.time()
-            rewards.append(newGame.playRound(saveIteration=i, distilledSavePath=f'LLMDistillations/distilledLLMHost13.pth'))
-            #wandb.finish()
+    # groupName="changeToWandDBGroupName"
+    for i in range(0,1):
+        #wandb.init(project="ChangeToWanDBProject",group=groupName,name=f"run{i}",config={"Algorithm": groupName}, mode="offline", id=f"{groupName}_Run{i}_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M')}")
+        startTime=time.time()
+        rewards.append(newGame.playRound(saveIteration=i, distilledSavePath=f'LLMDistillations/distilledLLMHost13.pth'))
+        #wandb.finish()
